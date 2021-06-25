@@ -1,0 +1,21 @@
+﻿@model Employee
+
+
+    <table class="table table-hover table-secondary my-3 mx-2">
+       <thead>
+           <tr>
+               <td>First Name</td>
+               <td>Surname</td>
+               <td>Department</td>
+               <td>ID</td>
+           </tr>
+       </thead>
+        <tbody>
+            <tr>
+                <td>@Model.FirstName</td>
+                <td>@Model.Surname</td>
+                <td>@Model.Department</td>
+                <td>@Model.EmployeeId</td>
+            </tr>
+        </tbody>
+    </table>
