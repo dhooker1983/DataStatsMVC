@@ -1,4 +1,5 @@
 ﻿using DataStatsMVC.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,16 +37,23 @@ namespace DataStatsMVC.Models.Repositories
             return _context.Set<T>().ToList();
         }
 
-        public abstract IEnumerable<T> GetCalls();
+        public abstract IEnumerable<T> GetCalls(int id);
 
-        public abstract IEnumerable<T> GetCallsByDate(DateTime start, DateTime end);
+        public IEnumerable<Call> GetCallsByDate(int id, DateTime start, DateTime finish)
+        {
+            return _context.Calls
+                        .Include(d => d.Department)
+                        .Include(e => e.Employee)
+                        .Where(c => c.Start >= start && c.Finish <= finish)
+                        .ToList();
+        }
 
         public void SaveChanges()
         {
             _context.SaveChanges();
         }
 
-        public T Update(T entity)
+        public virtual T Update(T entity)
         {
             return _context.Update(entity).Entity;
         }

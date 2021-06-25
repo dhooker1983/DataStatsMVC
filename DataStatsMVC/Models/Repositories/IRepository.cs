@@ -11,8 +11,8 @@ namespace DataStatsMVC.Models.Repositories
         T Get(int id);
         IEnumerable<T> GetAll();
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
-        IEnumerable<T> GetCalls();
-        IEnumerable<T> GetCallsByDate(DateTime start, DateTime end);
+        IEnumerable<T> GetCalls(int id);
+        IEnumerable<Call> GetCallsByDate(int id, DateTime start, DateTime finish);
         void SaveChanges();
         T Update(T entity);
     }
