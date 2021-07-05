@@ -14,12 +14,5 @@ namespace DataStatsMVC.Models.Repositories
         {
 
         }
-        public override IEnumerable<Department> GetCalls(int id)
-        {
-            return _context.Departments
-                        .Include(c => c.Calls)
-                        .Where(d => d.DepartmentId == id)
-                        .ToList();
-        }
     }
 }

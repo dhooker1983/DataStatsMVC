@@ -27,5 +27,6 @@ namespace DataStatsMVC.Controllers
         {
             return View(_depRepositroy.Get(id));
         }
+
     }
 }

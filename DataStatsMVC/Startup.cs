@@ -39,6 +39,7 @@ namespace DataStatsMVC
 
             services.AddScoped<IRepository<Department>, DepartmentRepository>();
             services.AddScoped<IRepository<Employee>, EmployeeRepository>();
+            services.AddScoped<IRepository<Call>, CallRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

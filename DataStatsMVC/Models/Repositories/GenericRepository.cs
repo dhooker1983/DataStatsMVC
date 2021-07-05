@@ -26,26 +26,20 @@ namespace DataStatsMVC.Models.Repositories
                 .ToList();
         }
 
-        public T Get(int id)
+        public virtual T Get(int id)
         {
             return _context.Find<T>(id);
                 
         }
 
-        public IEnumerable<T> GetAll()
+        public virtual IEnumerable<T> GetAll()
         {
             return _context.Set<T>().ToList();
         }
 
-        public abstract IEnumerable<T> GetCalls(int id);
-
-        public IEnumerable<Call> GetCallsByDate(int id, DateTime start, DateTime finish)
+        public virtual IEnumerable<T> GetByRange(string start, string finish, int id)
         {
-            return _context.Calls
-                        .Include(d => d.Department)
-                        .Include(e => e.Employee)
-                        .Where(c => c.Start >= start && c.Finish <= finish)
-                        .ToList();
+            throw new NotImplementedException();
         }
 
         public void SaveChanges()

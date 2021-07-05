@@ -14,12 +14,11 @@ namespace DataStatsMVC.Models.Repositories
         {
         }
 
-        public override IEnumerable<Employee> GetCalls(int id)
+        public override Employee Get(int id)
         {
             return _context.Employees
-                    .Include(c => c.Calls)
-                    .Where(e => e.EmployeeId == id)
-                    .ToList();
+                        .Include(d => d.Department)
+                        .FirstOrDefault(e => e.EmployeeId == id);
         }
     }
 }

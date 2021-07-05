@@ -6,6 +6,7 @@
     <title>@ViewData["Title"] - DataStatsMVC</title>
     <link rel="stylesheet" href="~/lib/twitter-bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="plotly-2.2.0.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -16,13 +17,16 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
+    <footer class="mt-1 py-3 bg-secondary fixed-bottom">
         <div class="container">
-            &copy; 2021 - DataStatsMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <ul class="mt-2">
+                <li><b>Human Resources: </b>01268 695558</li>
+                <li><b>IT Helpdesk: </b>0207 1234569</li>
+                <li><b>Manager's Email: </b> managername@dataStats.com</li>
+            </ul>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
