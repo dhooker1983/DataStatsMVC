@@ -26,5 +26,10 @@ namespace DataStatsMVC.Controllers
         {
             return View(_employeeRepository.Get(id));
         }
+
+        public IActionResult GetEmployees(int id)
+        {
+            return View(_employeeRepository.GetAll());
+        }
     }
 }

@@ -17,9 +17,9 @@ namespace DataStatsMVC.Controllers
             _callRepository = callRepository;
         }
 
-        public IActionResult GetByRange(string start, string finish, int id)
+        public IActionResult GetRangeByDepartment(string start, string finish, int id)
         {
-            var callList = _callRepository.GetByRange(start, finish, id);
+            var callList = _callRepository.GetRangeByDepartment(start, finish, id);
 
             return View(callList);
         }

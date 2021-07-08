@@ -18,6 +18,19 @@ namespace DataStatsMVC.Models.Repositories
             _context = context;
         }
 
+        public T Add(T entity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            var objToDelete = _context.Find<T>(id);
+            _context.Remove(objToDelete);
+
+            _context.SaveChanges();
+        }
+
         public IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
         {
             return _context.Set<T>()
@@ -37,10 +50,6 @@ namespace DataStatsMVC.Models.Repositories
             return _context.Set<T>().ToList();
         }
 
-        public virtual IEnumerable<T> GetByRange(string start, string finish, int id)
-        {
-            throw new NotImplementedException();
-        }
 
         public void SaveChanges()
         {

@@ -8,11 +8,13 @@ namespace DataStatsMVC.Models.Repositories
 {
     public interface IRepository<T> 
     {
+        T Add(T entity);
+        void Delete(int id);
         T Get(int id);
         IEnumerable<T> GetAll();
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
-        IEnumerable<T> GetByRange(string start, string finish, int id);
         void SaveChanges();
         T Update(T entity);
+        object GetRangeByDepartment(string start, string finish, int id);
     }
 }

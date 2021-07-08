@@ -20,5 +20,12 @@ namespace DataStatsMVC.Models.Repositories
                         .Include(d => d.Department)
                         .FirstOrDefault(e => e.EmployeeId == id);
         }
+
+        public IEnumerable<Employee> GetAllById(int id)
+        {
+            return _context.Employees
+                    .Where(e => e.Department.DepartmentId == id)
+                    .ToList();
+        }
     }
 }
