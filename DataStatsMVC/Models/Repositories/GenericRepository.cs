@@ -50,7 +50,6 @@ namespace DataStatsMVC.Models.Repositories
             return _context.Set<T>().ToList();
         }
 
-
         public void SaveChanges()
         {
             _context.SaveChanges();

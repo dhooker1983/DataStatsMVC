@@ -35,9 +35,6 @@ namespace DataStatsMVC.Data.Migrations
                     b.Property<DateTime>("Finish")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Offered")
-                        .HasColumnType("datetime2");
-
                     b.Property<DateTime>("Start")
                         .HasColumnType("datetime2");
 

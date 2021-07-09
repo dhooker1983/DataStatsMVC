@@ -19,7 +19,7 @@ namespace DataStatsMVC.Controllers
 
         public IActionResult GetRangeByDepartment(string start, string finish, int id)
         {
-            var callList = _callRepository.GetRangeByDepartment(start, finish, id);
+            var callList = new List<Call>();
 
             return View(callList);
         }

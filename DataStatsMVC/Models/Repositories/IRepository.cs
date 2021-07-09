@@ -15,6 +15,5 @@ namespace DataStatsMVC.Models.Repositories
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
         void SaveChanges();
         T Update(T entity);
-        object GetRangeByDepartment(string start, string finish, int id);
     }
 }
