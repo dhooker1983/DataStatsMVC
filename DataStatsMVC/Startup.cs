@@ -1,5 +1,6 @@
 using DataStatsMVC.Data;
 using DataStatsMVC.Models;
+using DataStatsMVC.Models.Interfaces;
 using DataStatsMVC.Models.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -39,7 +40,7 @@ namespace DataStatsMVC
 
             services.AddScoped<IRepository<Department>, DepartmentRepository>();
             services.AddScoped<IRepository<Employee>, EmployeeRepository>();
-            services.AddScoped<IRepository<Call>, CallRepository>();
+            services.AddScoped<ICallRepository, CallRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStatsMVC.Models.Repositories
 {
-    public class DepartmentRepository : GenericRepository<Department>
+    public class DepartmentRepository : GenericRepository<Department>, IRepository<Department>
     {
         public DepartmentRepository(ApplicationDbContext context)
             :base(context)

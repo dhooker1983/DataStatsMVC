@@ -1,4 +1,5 @@
 ﻿using DataStatsMVC.Data;
+using DataStatsMVC.Models.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataStatsMVC.Models.Repositories
 {
-    public class CallRepository : GenericRepository<Call>
+    public class CallRepository : GenericRepository<Call>, ICallRepository
     {
         public CallRepository(ApplicationDbContext context)
             :base(context)
@@ -31,22 +32,21 @@ namespace DataStatsMVC.Models.Repositories
 
         public IEnumerable<Call> GetRangeByDepartment(string start, string finish, int id)
         {
-            var sp = string.Format("EXEC CallsByRange @start = '{0}', @finish = '{1}'", start, finish);
+            var sp = string.Format("EXEC CallsByRange @start = '{0}', @finish = '{1}', @id = {2}", start, finish, id);
 
-            return _context.Calls
-                        .FromSqlRaw<Call>(sp)
-                        .Where(c => c.DepartmentId == id)
-                        .Include(d => d.Department)
-                        .ToList();
+            var callList = _context.Calls
+                            .FromSqlRaw<Call>(sp)
+                            .ToList();
+
+            return callList;
         }
 
         public IEnumerable<Call> GetRangeByEmployee(string start, string finish, int id)
         {
-            var sp = string.Format("EXEC CallsByRange @start = '{0}', @finish = '{1}'", start, finish);
+            var sp = string.Format("EXEC CallsByRange @start = '{0}', @finish = '{1}', @id = {2}", start, finish, id);
 
             return _context.Calls
                         .FromSqlRaw<Call>(sp)
-                        .Where(c => c.EmployeeId == id)
                         .Include(e => e.Employee) // not sure if this is needed
                         .ToList();
         }
