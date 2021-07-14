@@ -32,7 +32,7 @@ namespace DataStatsMVC.Models.Repositories
 
         public IEnumerable<Call> GetRangeByDepartment(string start, string finish, int id)
         {
-            var sp = string.Format("EXEC CallsByRange @start = '{0}', @finish = '{1}', @id = {2}", start, finish, id);
+            var sp = string.Format("EXEC RangeByDepartment @start = '{0}', @finish = '{1}', @id = {2}", start, finish, id);
 
             var callList = _context.Calls
                             .FromSqlRaw<Call>(sp)
@@ -43,7 +43,7 @@ namespace DataStatsMVC.Models.Repositories
 
         public IEnumerable<Call> GetRangeByEmployee(string start, string finish, int id)
         {
-            var sp = string.Format("EXEC CallsByRange @start = '{0}', @finish = '{1}', @id = {2}", start, finish, id);
+            var sp = string.Format("EXEC RangeByEmployee @start = '{0}', @finish = '{1}', @id = {2}", start, finish, id);
 
             return _context.Calls
                         .FromSqlRaw<Call>(sp)

@@ -17,15 +17,30 @@ namespace DataStatsMVC.Controllers
             _depRepositroy = depRepository;
         }
 
-        public IActionResult Index()
+        [HttpPost]
+        public IActionResult AddDepartment(Department dep)
         {
-            return View();
+            return View(_depRepositroy.Add(dep));
         }
 
         [HttpGet]
         public IActionResult GetDepartment(int id)
         {
             return View(_depRepositroy.Get(id));
+        }
+
+        [HttpGet]
+        public IActionResult GetDepartments()
+        {
+            return View(_depRepositroy.GetAll());
+        }
+
+        [HttpPut]
+        public IActionResult UpdateDepartment(Department dep)
+        {
+            var depToUpdate = _depRepositroy.Update(dep);
+
+            return View();
         }
 
     }

@@ -38,8 +38,6 @@ namespace DataStatsMVC
             services.AddControllersWithViews();
             services.AddRazorPages();
 
-            services.AddScoped<IRepository<Department>, DepartmentRepository>();
-            services.AddScoped<IRepository<Employee>, EmployeeRepository>();
             services.AddScoped<ICallRepository, CallRepository>();
         }
 

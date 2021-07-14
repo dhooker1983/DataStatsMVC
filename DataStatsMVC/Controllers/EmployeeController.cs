@@ -17,9 +17,9 @@ namespace DataStatsMVC.Controllers
             _employeeRepository = employeeRepository;
         }
 
-        public IActionResult Index()
+        public IActionResult AddEmployee(Employee emp)
         {
-            return View();
+            return View(_employeeRepository.Add(emp));
         }
 
         public IActionResult GetEmployee(int id)
@@ -30,6 +30,13 @@ namespace DataStatsMVC.Controllers
         public IActionResult GetEmployees(int id)
         {
             return View(_employeeRepository.GetAll());
+        }
+
+        public IActionResult UpdateEmployee(Employee emp)
+        {
+            var empToUpdate = _employeeRepository.Update(emp);
+
+            return View();
         }
     }
 }
