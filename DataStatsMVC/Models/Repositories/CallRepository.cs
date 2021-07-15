@@ -20,6 +20,7 @@ namespace DataStatsMVC.Models.Repositories
         {
             return _context.Calls
                      .Where(c => c.DepartmentId == id)
+                     .Include(d => d.Department)
                      .ToList();
         }
 
@@ -27,6 +28,8 @@ namespace DataStatsMVC.Models.Repositories
         {
             return _context.Calls
                     .Where(c => c.EmployeeId == id)
+                    .Include(d => d.Department)
+                    .Include(e => e.Employee)
                     .ToList();
         }
 
@@ -34,11 +37,9 @@ namespace DataStatsMVC.Models.Repositories
         {
             var sp = string.Format("EXEC RangeByDepartment @start = '{0}', @finish = '{1}', @id = {2}", start, finish, id);
 
-            var callList = _context.Calls
+            return _context.Calls
                             .FromSqlRaw<Call>(sp)
                             .ToList();
-
-            return callList;
         }
 
         public IEnumerable<Call> GetRangeByEmployee(string start, string finish, int id)
@@ -47,7 +48,6 @@ namespace DataStatsMVC.Models.Repositories
 
             return _context.Calls
                         .FromSqlRaw<Call>(sp)
-                        .Include(e => e.Employee) // not sure if this is needed
                         .ToList();
         }
     }

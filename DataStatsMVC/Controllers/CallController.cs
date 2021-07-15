@@ -30,7 +30,6 @@ namespace DataStatsMVC.Controllers
         {
             var callList = _callRepository.GetByEmployee(id);
 
-            //view needs to be added....
             return View(callList);
         }
 
@@ -45,7 +44,6 @@ namespace DataStatsMVC.Controllers
         {
             var callList = _callRepository.GetRangeByEmployee(start, finish, id);
 
-            //view needs to be added....
             return View(callList);
         }
     }

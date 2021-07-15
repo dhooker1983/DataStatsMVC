@@ -13,10 +13,10 @@
         @foreach (var call in Model)
         {
             <tr>
-                <th scope="row">#</th>
-                <td>@call.Department.Name</td>
-                <td>@call.Start.ToShortDateString()</td>
-                <td>@call.CallId</td>
+                <td scope="row">#</td>
+                <td scope="row">@call.Department.Name</td>
+                <td scope="row">@call.Start.ToShortTimeString()</td>
+                <td scope="row">@call.EmployeeId</td>
             </tr>
         }
     </tbody>

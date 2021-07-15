@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Call>
+
+<table class="table-secondary">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Deparment</th>
+            <th scope="col">Date</th>
+            <th scope="col">AHT</th>
+            <th scope="col">Surname</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var call in Model)
+        {
+            <tr>
+                <td scope="row">#</td>
+                <td scope="row">@call.DepartmentId</td>
+                <td scope="row">@call.Start.ToShortTimeString()</td>
+                <td scope="row">@call.EmployeeId</td>
+                <td scope="row">@call.Finish.ToShortTimeString()</td>
+            </tr>
+        }
+    </tbody>
+</table>
