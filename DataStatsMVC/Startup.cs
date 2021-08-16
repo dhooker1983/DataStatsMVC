@@ -1,3 +1,4 @@
+using DataStatsMVC.Areas.Identity;
 using DataStatsMVC.Data;
 using DataStatsMVC.Models;
 using DataStatsMVC.Models.Interfaces;
@@ -11,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,12 +35,29 @@ namespace DataStatsMVC
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+                       {
+                           options.SignIn.RequireConfirmedAccount = false;
+                           options.Password.RequiredLength = 6;
+                           options.Lockout.DefaultLockoutTimeSpan = new TimeSpan(00, 01, 00);
+                       })
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultUI();
+
+            //same as the above but as the above add of defaultidentity is required that is the perferred
+            //option for configuring user policy settings.
+            services.Configure<IdentityOptions>(ops =>
+            {
+                ops.Lockout.DefaultLockoutTimeSpan = new TimeSpan(00, 01, 00);
+                ops.User.RequireUniqueEmail = true;
+            });
+
             services.AddControllersWithViews();
             services.AddRazorPages();
 
             services.AddScoped<ICallRepository, CallRepository>();
+            services.AddScoped<IRepository<Department>, DepartmentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

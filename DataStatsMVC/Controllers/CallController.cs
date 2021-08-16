@@ -1,6 +1,7 @@
 ﻿using DataStatsMVC.Models;
 using DataStatsMVC.Models.Interfaces;
 using DataStatsMVC.Models.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataStatsMVC.Controllers
 {
+    [Authorize(Roles = "Admin,User")]
     public class CallController : Controller
     {
         private readonly ICallRepository _callRepository;
@@ -22,7 +24,6 @@ namespace DataStatsMVC.Controllers
         {
             var callList = _callRepository.GetByDepartment(id);
 
-            //view needs to be added.....
             return View(callList);
         }
 

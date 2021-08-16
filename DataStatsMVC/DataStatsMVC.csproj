@@ -8,6 +8,12 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20210707101511_AdditionalDateTimePropertyAddedToCall.cs" />
     <Compile Remove="Data\Migrations\20210707101511_AdditionalDateTimePropertyAddedToCall.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210811211740_ExtendingIdentityUser.cs" />
+    <Compile Remove="Data\Migrations\20210811211740_ExtendingIdentityUser.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210811212001_ExtendingIdentityUser2.cs" />
+    <Compile Remove="Data\Migrations\20210811212001_ExtendingIdentityUser2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210811212243_ExtendingIdentityUser.cs" />
+    <Compile Remove="Data\Migrations\20210811212243_ExtendingIdentityUser.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +23,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.15" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.15" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Identity\Data\" />
   </ItemGroup>
 
 </Project>

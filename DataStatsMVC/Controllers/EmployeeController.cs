@@ -1,5 +1,6 @@
 ﻿using DataStatsMVC.Models;
 using DataStatsMVC.Models.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataStatsMVC.Controllers
 {
+    [Authorize]
     public class EmployeeController : Controller
     {
         private readonly IRepository<Employee> _employeeRepository;
