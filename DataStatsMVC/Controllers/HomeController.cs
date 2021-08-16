@@ -1,5 +1,6 @@
 ﻿using DataStatsMVC.Models;
 using DataStatsMVC.Models.Repositories;
+using DataStatsMVC.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -23,9 +24,10 @@ namespace DataStatsMVC.Controllers
 
         public IActionResult Index()
         {
-            var deps = _depRepo.GetAll().ToList();
+            var depsView = new DepartmentViewModel();
+            depsView.Departments = _depRepo.GetAll().ToList();
 
-            return View(deps);
+            return View(depsView);
         }
 
         public IActionResult Privacy()
