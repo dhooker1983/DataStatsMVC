@@ -57,7 +57,8 @@ namespace DataStatsMVC
             services.AddRazorPages();
 
             services.AddScoped<ICallRepository, CallRepository>();
-            services.AddScoped<IRepository<Department>, DepartmentRepository>();
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
