@@ -1,5 +1,7 @@
 ﻿using DataStatsMVC.Models;
+using DataStatsMVC.Models.Interfaces;
 using DataStatsMVC.Models.Repositories;
+using DataStatsMVC.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,16 +14,27 @@ namespace DataStatsMVC.Controllers
     [Authorize]
     public class EmployeeController : Controller
     {
-        private readonly IRepository<Employee> _employeeRepository;
+        private readonly IEmployeeRepository _employeeRepository;
+        private readonly IDepartmentRepository _departmentRepository;
 
-        public EmployeeController(IRepository<Employee> employeeRepository)
+        public EmployeeController(IEmployeeRepository employeeRepository, IDepartmentRepository departmentRepository)
         {
             _employeeRepository = employeeRepository;
+            _departmentRepository = departmentRepository;
         }
 
+        [HttpGet]
+        public IActionResult AddEmployee()
+        {
+            var model = new EmployeeViewModel(_departmentRepository);
+            return View(model);
+        }
+
+        [HttpPost]
         public IActionResult AddEmployee(Employee emp)
         {
-            return View(_employeeRepository.Add(emp));
+            _employeeRepository.Add(emp);
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult GetEmployee(int id)

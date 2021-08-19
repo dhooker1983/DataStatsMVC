@@ -14,5 +14,11 @@ namespace DataStatsMVC.Models.Repositories
         {
 
         }
+
+        public override void Add(Employee entity)
+        {
+            entity.StartDate = DateTime.Now;
+            base.Add(entity);
+        }
     }
 }

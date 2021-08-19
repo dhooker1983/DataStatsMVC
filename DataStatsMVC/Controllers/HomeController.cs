@@ -14,20 +14,15 @@ namespace DataStatsMVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IRepository<Department> _depRepo;
 
-        public HomeController(ILogger<HomeController> logger, IRepository<Department> depRepo)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _depRepo = depRepo;
         }
 
         public IActionResult Index()
         {
-            var depsView = new DepartmentViewModel();
-            depsView.Departments = _depRepo.GetAll().ToList();
-
-            return View(depsView);
+            return View();
         }
 
         public IActionResult Privacy()

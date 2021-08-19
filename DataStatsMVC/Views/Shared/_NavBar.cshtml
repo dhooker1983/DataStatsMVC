@@ -1,6 +1,6 @@
-﻿@inject SignInManager<ApplicationUser> SignInManager
+﻿
+@inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
-@model DepartmentViewModel
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
@@ -29,10 +29,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Departments</a>
                     <div class="dropdown-menu">
-                        @foreach (var item in Model.Departments)
-                        {
-                            <a class="dropdown-item" href="#">@item.Name</a>
-                        }
+                        <a class="dropdown-item" href="#">BOI</a>
+                        <a class="dropdown-item" href="#">F&D</a>
+                        <a class="dropdown-item" href="#">LBG</a>
+                        <a class="dropdown-item" href="#">ND</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">All Departments</a>
                     </div>

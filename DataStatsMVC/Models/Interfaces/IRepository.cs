@@ -8,7 +8,7 @@ namespace DataStatsMVC.Models.Repositories
 {
     public interface IRepository<T> 
     {
-        T Add(T entity);
+        void Add(T entity);
         void Delete(int id);
         T Get(int id);
         IEnumerable<T> GetAll();

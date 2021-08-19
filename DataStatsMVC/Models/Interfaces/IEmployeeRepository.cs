@@ -9,4 +9,6 @@ namespace DataStatsMVC.Models.Interfaces
     public interface IEmployeeRepository : IRepository<Employee>
     {
     }
+
+    
 }

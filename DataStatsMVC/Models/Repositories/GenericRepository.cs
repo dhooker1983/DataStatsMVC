@@ -18,9 +18,10 @@ namespace DataStatsMVC.Models.Repositories
             _context = context;
         }
 
-        public T Add(T entity)
+        public virtual void Add(T entity)
         {
-            throw new NotImplementedException();
+            _context.Add(entity);
+            _context.SaveChanges();
         }
 
         public void Delete(int id)
