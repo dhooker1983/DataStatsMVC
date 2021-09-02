@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DataStatsMVC.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _employeeRepository;

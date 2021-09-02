@@ -14,6 +14,8 @@
     <Compile Remove="Data\Migrations\20210811212001_ExtendingIdentityUser2.Designer.cs" />
     <Compile Remove="Data\Migrations\20210811212243_ExtendingIdentityUser.cs" />
     <Compile Remove="Data\Migrations\20210811212243_ExtendingIdentityUser.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210822231159_AddingDepartmentIdToEmployee.cs" />
+    <Compile Remove="Data\Migrations\20210822231159_AddingDepartmentIdToEmployee.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

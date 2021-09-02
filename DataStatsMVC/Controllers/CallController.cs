@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataStatsMVC.Controllers
 {
-    [Authorize(Roles = "Admin,User")]
+    //[Authorize(Roles = "Admin,User")]
     public class CallController : Controller
     {
         private readonly ICallRepository _callRepository;

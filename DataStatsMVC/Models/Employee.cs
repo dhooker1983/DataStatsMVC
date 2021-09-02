@@ -16,6 +16,7 @@ namespace DataStatsMVC.Models
         public DateTime Age { get; set; }
         public DateTime StartDate { get; set; }
 
+        public int DepartmentId { get; set; }
         public Department Department { get; set; }
         public Holiday Holiday { get; set; }
         public List<Call> Calls { get; set; }

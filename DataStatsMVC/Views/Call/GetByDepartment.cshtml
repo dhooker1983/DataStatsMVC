@@ -8,9 +8,13 @@
     <thead class="bg-light">
         <tr>
             <th scope="col">#</th>
+            <th scope="col">Employee Id</th>
             <th scope="col">Deparment</th>
             <th scope="col">Date</th>
+            <th scope="col">Talk Time</th>
+            <th scope="col">Wrap Time</th>
             <th scope="col">AHT</th>
+            <th scope="col">In Service</th>
         </tr>
     </thead>
     <tbody>
@@ -18,9 +22,21 @@
         {
             <tr>
                 <td scope="row">#</td>
-                <td scope="row">@call.Department.Name</td>
-                <td scope="row">@call.Start.ToShortTimeString()</td>
                 <td scope="row">@call.EmployeeId</td>
+                <td scope="row">@call.Department.Name</td>
+                <td scope="row">@call.Offered.ToShortDateString()</td>
+                <td scope="row">@call.TalkTime</td>
+                <td scope="row">@call.WrapTime</td>
+                <td scope="row">@call.AHT</td>
+                @{ if (call.InService)
+                    {
+                    <td scope="row">Yes</td>
+                    }
+                    else
+                    {
+                    <td scope="row">No</td>
+                        }
+                }
             </tr>
         }
     </tbody>
