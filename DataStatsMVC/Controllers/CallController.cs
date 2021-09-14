@@ -14,10 +14,12 @@ namespace DataStatsMVC.Controllers
     public class CallController : Controller
     {
         private readonly ICallRepository _callRepository;
+        private readonly IDepartmentRepository _depRepository;
 
-        public CallController(ICallRepository callRepository)
+        public CallController(ICallRepository callRepository, IDepartmentRepository depRepository)
         {
             _callRepository = callRepository;
+            _depRepository = depRepository;
         }
 
         public IActionResult GetByDepartment(int id)
@@ -46,6 +48,13 @@ namespace DataStatsMVC.Controllers
             var callList = _callRepository.GetRangeByEmployee(start, finish, id);
 
             return View(callList);
+        }
+
+        public IActionResult CallsBy()
+        {
+            var deps = _depRepository.GetAll().ToList();
+
+            return View(deps);
         }
     }
 }
