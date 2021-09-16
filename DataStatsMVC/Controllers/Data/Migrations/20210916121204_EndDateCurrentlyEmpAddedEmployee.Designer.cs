@@ -4,14 +4,16 @@ using DataStatsMVC.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataStatsMVC.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210916121204_EndDateCurrentlyEmpAddedEmployee")]
+    partial class EndDateCurrentlyEmpAddedEmployee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -155,8 +157,14 @@ namespace DataStatsMVC.Data.Migrations
                     b.Property<DateTime>("Age")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("CurrentlyEmployed")
+                        .HasColumnType("bit");
+
                     b.Property<int>("DepartmentId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("FirstName")
                         .HasColumnType("nvarchar(max)");

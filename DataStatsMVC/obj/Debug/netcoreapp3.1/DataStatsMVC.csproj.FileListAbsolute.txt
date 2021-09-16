@@ -170,9 +170,7 @@ C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_NavBar.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\bin\Debug\netcoreapp3.1\libman.json
-C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Department\GetDepartment.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Employee\GetEmployee.cshtml.g.cs
-C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Department\GetCallsByDate.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Call\GetRangeByDepartment.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Call\GetByEmployee.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Call\GetRangeByEmployee.cshtml.g.cs
@@ -183,3 +181,6 @@ C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\ResetPasswordConfirmation.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Employee\AddEmployee.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Call\CallsBy.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Department\GetDepartment.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Department\GetDepartments.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Employee\GetEmployees.cshtml.g.cs

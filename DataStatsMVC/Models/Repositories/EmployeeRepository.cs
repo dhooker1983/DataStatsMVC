@@ -1,5 +1,6 @@
 ﻿using DataStatsMVC.Data;
 using DataStatsMVC.Models.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,16 @@ namespace DataStatsMVC.Models.Repositories
         {
             entity.StartDate = DateTime.Now;
             base.Add(entity);
+        }
+
+        public override IEnumerable<Employee> GetAll()
+        {
+            var employees = _context.Employees
+                                .Where(x => x.EmployeeId > 0)
+                                .Include(x => x.Department)
+                                .ToList();
+
+            return employees;
         }
     }
 }

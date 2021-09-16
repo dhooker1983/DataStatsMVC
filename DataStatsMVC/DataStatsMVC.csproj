@@ -6,16 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Data\Migrations\20210707101511_AdditionalDateTimePropertyAddedToCall.cs" />
-    <Compile Remove="Data\Migrations\20210707101511_AdditionalDateTimePropertyAddedToCall.Designer.cs" />
-    <Compile Remove="Data\Migrations\20210811211740_ExtendingIdentityUser.cs" />
-    <Compile Remove="Data\Migrations\20210811211740_ExtendingIdentityUser.Designer.cs" />
-    <Compile Remove="Data\Migrations\20210811212001_ExtendingIdentityUser2.cs" />
-    <Compile Remove="Data\Migrations\20210811212001_ExtendingIdentityUser2.Designer.cs" />
-    <Compile Remove="Data\Migrations\20210811212243_ExtendingIdentityUser.cs" />
-    <Compile Remove="Data\Migrations\20210811212243_ExtendingIdentityUser.Designer.cs" />
-    <Compile Remove="Data\Migrations\20210822231159_AddingDepartmentIdToEmployee.cs" />
-    <Compile Remove="Data\Migrations\20210822231159_AddingDepartmentIdToEmployee.Designer.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210707101511_AdditionalDateTimePropertyAddedToCall.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210707101511_AdditionalDateTimePropertyAddedToCall.Designer.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210811211740_ExtendingIdentityUser.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210811211740_ExtendingIdentityUser.Designer.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210811212001_ExtendingIdentityUser2.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210811212001_ExtendingIdentityUser2.Designer.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210811212243_ExtendingIdentityUser.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210811212243_ExtendingIdentityUser.Designer.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210822231159_AddingDepartmentIdToEmployee.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210822231159_AddingDepartmentIdToEmployee.Designer.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210916120220_EndDateCurrentlyEmpAddedEmployee.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210916120220_EndDateCurrentlyEmpAddedEmployee.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
