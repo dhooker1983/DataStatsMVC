@@ -27,6 +27,7 @@ namespace DataStatsMVC.Data
             // and if this method is not called, you will get an error saying 'IdentityUserLogin<string>
             // requires a primary key to be defined.
             base.OnModelCreating(builder);
+
         }
     }
 }

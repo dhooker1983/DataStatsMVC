@@ -18,6 +18,14 @@
     <Compile Remove="Controllers\Data\Migrations\20210822231159_AddingDepartmentIdToEmployee.Designer.cs" />
     <Compile Remove="Controllers\Data\Migrations\20210916120220_EndDateCurrentlyEmpAddedEmployee.cs" />
     <Compile Remove="Controllers\Data\Migrations\20210916120220_EndDateCurrentlyEmpAddedEmployee.Designer.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210916125628_EmployeeCheck.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210916125628_EmployeeCheck.Designer.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210916130448_EmployeeCheck.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210916130448_EmployeeCheck.Designer.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210916203515_test.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210916203515_test.Designer.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210917131618_RemovingDoBFromEmployee.cs" />
+    <Compile Remove="Controllers\Data\Migrations\20210917131618_RemovingDoBFromEmployee.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

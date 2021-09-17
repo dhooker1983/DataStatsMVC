@@ -39,7 +39,8 @@ namespace DataStatsMVC.Controllers
 
         public IActionResult GetEmployee(int id)
         {
-            return View(_employeeRepository.Get(id));
+            var emp = _employeeRepository.Get(id);
+            return View(emp);
         }
 
         public IActionResult GetEmployees(int id)

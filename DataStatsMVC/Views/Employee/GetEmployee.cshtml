@@ -1,21 +1,23 @@
 ﻿@model Employee
 
 
-    <table class="table table-hover table-secondary my-3 mx-2">
+    <table class="table table-hover my-3 mx-2 w-75">
        <thead>
            <tr>
-               <td>First Name</td>
-               <td>Surname</td>
-               <td>Department</td>
-               <td>ID</td>
+               <td scope="col">First Name</td>
+               <td scope="col">Surname</td>
+               <td scope="col">Department</td>
+               <td scope="col">ID</td>
+               <td scope="col">Age</td>
            </tr>
        </thead>
         <tbody>
             <tr>
-                <td>@Model.FirstName</td>
-                <td>@Model.Surname</td>
-                <td>@Model.Department.Name</td>
-                <td>@Model.EmployeeId</td>
+                <td scope="row">@Html.DisplayFor(Model => Model.FirstName)</td>
+                <td scope="row">@Html.DisplayFor(Model => Model.Surname)</td>
+                <td scope="row">@Html.DisplayFor(Model => Model.DepartmentId)</td>
+                <td scope="row">@Html.DisplayFor(Model => Model.CurrentlyEmployed)</td>
+                <td scope="row">@Html.DisplayFor(Model => Model.Age)</td>
             </tr>
         </tbody>
     </table>
