@@ -22,9 +22,13 @@
             <td scope="row">@emp.FirstName</td>
             <td scope="row">@emp.Surname</td>
             <td scope="row">@emp.Department.Name</td>
-            <td scope="row">@emp.StartDate</td>
+            <td scope="row">@emp.StartDate.ToShortDateString()</td>
             <td scope="row">@emp.Age</td>
-            <td scope="row">@emp.CurrentlyEmployed</td>
+            <td scope="row">
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" asp-for="@emp.CurrentlyEmployed">
+                </div>
+            </td>
         </tr>
         }
     </tbody>

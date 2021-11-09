@@ -33,22 +33,26 @@ namespace DataStatsMVC.Models.Repositories
                     .ToList();
         }
 
-        public IEnumerable<Call> GetRangeByDepartment(string start, string finish, int id)
+        public IEnumerable<Call> GetRangeByDepartment(string name, string start, string finish)
         {
-            var sp = string.Format("EXEC RangeByDepartment @start = '{0}', @finish = '{1}', @id = {2}", start, finish, id);
+            var sp = string.Format("EXEC RangeByDepartment @start = '{0}', @finish = '{1}', @name = '{2}'", start, finish, name);
 
             return _context.Calls
                             .FromSqlRaw<Call>(sp)
                             .ToList();
         }
 
-        public IEnumerable<Call> GetRangeByEmployee(string start, string finish, int id)
+        public IEnumerable<Call> GetRangeByEmployee(int id, string start, string finish)
         {
+            start = "2021-01-01";
+            finish = "2021-10-30";
+
             var sp = string.Format("EXEC RangeByEmployee @start = '{0}', @finish = '{1}', @id = {2}", start, finish, id);
 
             return _context.Calls
                         .FromSqlRaw<Call>(sp)
                         .ToList();
         }
+
     }
 }

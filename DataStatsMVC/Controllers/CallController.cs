@@ -1,6 +1,7 @@
 ﻿using DataStatsMVC.Models;
 using DataStatsMVC.Models.Interfaces;
 using DataStatsMVC.Models.Repositories;
+using DataStatsMVC.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -22,6 +23,11 @@ namespace DataStatsMVC.Controllers
             _depRepository = depRepository;
         }
 
+        public IActionResult Index()
+        {
+            return View();
+        }
+
         public IActionResult GetByDepartment(int id)
         {
             var callList = _callRepository.GetByDepartment(id);
@@ -36,16 +42,37 @@ namespace DataStatsMVC.Controllers
             return View(callList);
         }
 
-        public IActionResult GetRangeByDepartment(string start, string finish, int id)
+        [HttpPost]
+        public IActionResult PostRangeByDepartment(DepartmentViewModel model)
         {
-            var callList = _callRepository.GetRangeByDepartment(start, finish, id);
+            return RedirectToAction("GetRangeByDepartment", model);
+        }
+
+        [HttpGet]
+        public IActionResult GetRangeByDepartment(DepartmentViewModel model)
+        {
+            var name = model.Name.ToString();
+            var start = model.RangeStart.ToString("yyyy-MM-dd h:mm tt");
+            var finish = model.RangeEnd.ToString("yyyy-MM-dd h:mm tt");
+
+            var callList = _callRepository.GetRangeByDepartment(name, start, finish);
 
             return View(callList);
         }
 
-        public IActionResult GetRangeByEmployee(string start, string finish, int id)
+        public IActionResult PostRangeByEmployee(DepartmentViewModel model)
         {
-            var callList = _callRepository.GetRangeByEmployee(start, finish, id);
+            return RedirectToAction("GetRangeByEmployee", model);
+        }
+
+        [HttpGet]
+        public IActionResult GetRangeByEmployee(DepartmentViewModel model)
+        {
+            var id = model.DepId;
+            var start = model.RangeStart.ToString("yyyy-MM-dd h:mm tt");
+            var finish = model.RangeEnd.ToString("yyyy-MM-dd h:mm tt");
+
+            var callList = _callRepository.GetRangeByEmployee(id, start, finish);
 
             return View(callList);
         }

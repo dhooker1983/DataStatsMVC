@@ -10,7 +10,7 @@ namespace DataStatsMVC.Models.Interfaces
     {
         IEnumerable<Call> GetByDepartment(int id);
         IEnumerable<Call> GetByEmployee(int id);
-        IEnumerable<Call> GetRangeByDepartment(string start, string finish, int id);
-        IEnumerable<Call> GetRangeByEmployee(string start, string finish, int id);
+        IEnumerable<Call> GetRangeByDepartment(string name, string start, string finish);
+        IEnumerable<Call> GetRangeByEmployee(int id, string start, string finish);
     }
 }

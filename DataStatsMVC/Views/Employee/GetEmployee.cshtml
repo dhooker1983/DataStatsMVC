@@ -7,7 +7,7 @@
                <td scope="col">First Name</td>
                <td scope="col">Surname</td>
                <td scope="col">Department</td>
-               <td scope="col">ID</td>
+               <td scope="col">Current Employee</td>
                <td scope="col">Age</td>
            </tr>
        </thead>
@@ -15,7 +15,7 @@
             <tr>
                 <td scope="row">@Html.DisplayFor(Model => Model.FirstName)</td>
                 <td scope="row">@Html.DisplayFor(Model => Model.Surname)</td>
-                <td scope="row">@Html.DisplayFor(Model => Model.DepartmentId)</td>
+                <td scope="row">@Html.DisplayFor(Model => Model.Department.Name)</td>
                 <td scope="row">@Html.DisplayFor(Model => Model.CurrentlyEmployed)</td>
                 <td scope="row">@Html.DisplayFor(Model => Model.Age)</td>
             </tr>

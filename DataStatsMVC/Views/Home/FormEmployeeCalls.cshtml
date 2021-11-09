@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Employee>
+
+<h2 class="m-3">Employees</h2>
+
+<table class="table table-hover mt-2 w-50">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Department</th>
+        </tr>
+    </thead>
+        @foreach (var emp in Model)
+        {
+<tr>
+    <td scope="row">#</td>
+    <td scope="row"> <a style="text-decoration: none" asp-action="" asp-controller="Call">@emp.FirstName</a></td>
+    <td scope="row"> <a style="text-decoration: none" asp-action="" asp-controller="Call">@emp.Surname</a></td>
+    <td scope="row"> <a style="text-decoration: none" asp-action="" asp-controller="Call">@emp.Department.Name</a></td>
+   
+</tr>
+        }
+</table>

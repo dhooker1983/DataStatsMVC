@@ -21,7 +21,8 @@
                 <td scope="row"><a style="text-decoration: none" asp-action="GetEmployees" asp-controller="Employee">Employees</a></td>
             </tr>
             <tr>
-                <td scope="row"><a style="text-decoration: none" asp-action="@*Think Calls here*@" asp-controller="Call">Reports</a></td>
+                @* if the method u r calling requires a parameter use asp-route-parametersName="@model.Id" for example. *@
+                <td scope="row"><a style="text-decoration: none" asp-action="ReportMenu" asp-controller="Home">Reports</a></td>
             </tr>
         </tbody>
     </table>

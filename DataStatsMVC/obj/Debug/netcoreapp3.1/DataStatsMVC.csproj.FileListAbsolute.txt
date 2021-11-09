@@ -184,3 +184,8 @@ C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Department\GetDepartment.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Department\GetDepartments.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Employee\GetEmployees.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Call\Index.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\ReportForm.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\ReportMenu.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\FormEmployeeCalls.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\FormDepartmentCalls.cshtml.g.cs
