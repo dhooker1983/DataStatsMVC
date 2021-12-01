@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c9f29eef-a3e0-4ea3-aecb-5252d3fe2e69": {
+      "ProjectGuid": "c9f29eef-a3e0-4ea3-aecb-5252d3fe2e69",
+      "DisplayName": "DataStatsMVC",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

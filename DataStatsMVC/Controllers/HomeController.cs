@@ -76,6 +76,8 @@ namespace DataStatsMVC.Controllers
         public IActionResult FormEmployeeCalls()
         {
             var list = _empRepository.GetAll().ToList();
+            //think i need to pass a model with the Id to return all calls for an employee.
+            //var listTwo = _empRepository.Find(e => e.FirstName == "Model").ToList();
 
             return View(list);
         }
@@ -83,6 +85,8 @@ namespace DataStatsMVC.Controllers
         public IActionResult FormDepartmentCalls()
         {
             var list = _depRepository.GetAll().ToList();
+            //think i need to pass a model with the Id to return all calls for a department. 
+            //var listTwo = _depRepository.Find(d => d.DepartmentId == 1).ToList();
 
             return View(list);
         }

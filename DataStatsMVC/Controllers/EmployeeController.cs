@@ -10,7 +10,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace DataStatsMVC.Controllers
-{
+{   
+    //to need look up list the Authorize attribute, how it works exactly.
     //[Authorize]
     public class EmployeeController : Controller
     {
