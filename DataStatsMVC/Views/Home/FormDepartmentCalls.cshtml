@@ -1,20 +1,17 @@
-﻿@model IEnumerable<Department>
+﻿@model DepartmentViewModel
 
-<h2 class="m-3">Departments</h2>
+<h2 class="m-4">Calls by Department</h2>
 
-<table class="table table-hover mt-2 w-50">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Department</th>
-        </tr>
-    </thead>
-    @foreach (var dep in Model)
-    {
-        <tr>
-            <td scope="row">#</td>
-            <td scope="row"> <a style="text-decoration: none" asp-action="" asp-controller="Call">@dep.Name</a></td>
+<form asp-controller="Call" asp-action="GetByDepartment" method="post" role="form" class="m-3 w-25">
+    <div class="form-group m-1">
+        <label asp-for="@Model.Name">Please select a department</label>
+        <select class="form-control" asp-for="@Model.Name">
+            <option>BOI</option>
+            <option>Fraud</option>
+            <option>LBG</option>
+            <option>ND</option>
+        </select>
+    </div>
+    <button class="btn btn-primary mt-3 ml-2" type="submit">Submit</button>
+</form>
 
-        </tr>
-    }
-</table>

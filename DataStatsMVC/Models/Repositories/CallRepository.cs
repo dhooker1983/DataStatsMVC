@@ -16,10 +16,10 @@ namespace DataStatsMVC.Models.Repositories
 
         }
 
-        public IEnumerable<Call> GetByDepartment(int id)
+        public IEnumerable<Call> GetByDepartment(string name)
         {
             return _context.Calls
-                     .Where(c => c.DepartmentId == id)
+                     .Where(c => c.Department.Name == name)
                      .Include(d => d.Department)
                      .ToList();
         }

@@ -80,11 +80,12 @@ namespace DataStatsMVC.Controllers
             return View(list);
         }
 
+        //
         public IActionResult FormDepartmentCalls()
         {
-            var list = _depRepository.GetAll().ToList();
+            var model = new DepartmentViewModel();
 
-            return View(list);
+            return View(model);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

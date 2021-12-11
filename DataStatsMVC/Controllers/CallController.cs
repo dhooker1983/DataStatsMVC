@@ -28,9 +28,10 @@ namespace DataStatsMVC.Controllers
             return View();
         }
 
-        public IActionResult GetByDepartment(int id)
+        public IActionResult GetByDepartment(DepartmentViewModel model)
         {
-            var callList = _callRepository.GetByDepartment(id);
+            var name = model.Name.ToString();
+            var callList = _callRepository.GetByDepartment(name);
 
             return View(callList);
         }
