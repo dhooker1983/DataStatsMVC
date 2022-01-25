@@ -9,18 +9,9 @@ namespace DataStatsMVC.Models.ViewModels
     public class EmployeeViewModel : Employee
     {
 
-        private readonly IDepartmentRepository _departments;
+        public string NameTwo { get; set; }
         public List<Department> Departments { get; set; }
+        public List<Employee> Employees { get; set; }
 
-        public EmployeeViewModel(IDepartmentRepository deparment)
-        {
-            _departments = deparment;
-            SetDepartments();
-        }
-
-        public void SetDepartments()
-        {
-            Departments = _departments.GetAll().ToList();
-        }
     }
 }

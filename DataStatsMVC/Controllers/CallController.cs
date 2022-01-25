@@ -16,11 +16,13 @@ namespace DataStatsMVC.Controllers
     {
         private readonly ICallRepository _callRepository;
         private readonly IDepartmentRepository _depRepository;
+        private readonly IEmployeeRepository _empRepository;
 
-        public CallController(ICallRepository callRepository, IDepartmentRepository depRepository)
+        public CallController(ICallRepository callRepository, IDepartmentRepository depRepository, IEmployeeRepository empRepository)
         {
             _callRepository = callRepository;
             _depRepository = depRepository;
+            _empRepository = empRepository;
         }
 
         public IActionResult Index()
@@ -36,12 +38,28 @@ namespace DataStatsMVC.Controllers
             return View(callList);
         }
 
-        public IActionResult GetByEmployee(int id)
+        public IActionResult GetByEmployee(EmployeeViewModel model)
         {
-            var callList = _callRepository.GetByEmployee(id);
+            var employee = _empRepository.Find(x => x.Name == model.Name).FirstOrDefault();
+            var callList = _callRepository.GetByEmployee(employee.EmployeeId);
 
             return View(callList);
         }
+
+        public IActionResult GetByEmployeeGraph(EmployeeViewModel model)
+        {
+
+            return View();
+        }
+
+        public JsonResult GetByEmployeeData(int id)
+        {
+            var graphData = _callRepository.GetByEmployee(id);
+            
+            return Json(graphData);
+        }
+
+
 
         [HttpPost]
         public IActionResult PostRangeByDepartment(DepartmentViewModel model)

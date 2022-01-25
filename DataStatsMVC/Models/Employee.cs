@@ -13,6 +13,7 @@ namespace DataStatsMVC.Models
         public string FirstName { get; set; }
         public string Surname { get; set; }
         public int Age { get; set; }
+        public string Name { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime StartDate { get; set; }

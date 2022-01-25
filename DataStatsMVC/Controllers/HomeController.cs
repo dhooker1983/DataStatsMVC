@@ -75,16 +75,17 @@ namespace DataStatsMVC.Controllers
 
         public IActionResult FormEmployeeCalls()
         {
-            var list = _empRepository.GetAll().ToList();
-
-            return View(list);
+            var model = new EmployeeViewModel()
+            {
+                Employees = _empRepository.GetAll().ToList()
+            };
+            return View(model);
         }
 
         //
         public IActionResult FormDepartmentCalls()
         {
             var model = new DepartmentViewModel();
-
             return View(model);
         }
 

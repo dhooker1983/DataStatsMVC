@@ -62,6 +62,7 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+
 hr {
     margin: 1rem 0;
     color: inherit;
@@ -2101,11 +2102,11 @@ progress {
     --bs-table-bg: transparent;
     --bs-table-accent-bg: transparent;
     --bs-table-striped-color: #495057;
-    --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+    --bs-table-striped-bg: rgba(0, 0, 0, 0.025);
     --bs-table-active-color: #495057;
     --bs-table-active-bg: rgba(0, 0, 0, 0.1);
     --bs-table-hover-color: #495057;
-    --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+    --bs-table-hover-bg: rgba(0, 0, 0, 0.1);
     width: 100%;
     margin-bottom: 1rem;
     color: #495057;
@@ -7950,6 +7951,10 @@ fieldset:disabled .btn {
 
 .mt-5 {
     margin-top: 3rem !important;
+}
+
+.mt-6 {
+    margin-top: 5rem !important;
 }
 
 .mt-auto {

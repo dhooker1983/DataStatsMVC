@@ -26,7 +26,7 @@ namespace DataStatsMVC.Controllers
         [HttpGet]
         public IActionResult AddEmployee()
         {
-            var model = new EmployeeViewModel(_departmentRepository);
+            var model = new EmployeeViewModel();
             return View(model);
         }
 

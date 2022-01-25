@@ -3,44 +3,83 @@
 
 // Write your JavaScript code.
 
+var graphData = [];
 
-//Plotly.d3.csv("/wwwroot/graphData/GraphData.csv", function (err, rows) {
+fetch('/this/needs/tobe/decided')
+    .then(response => response.json())
+    .then(data => graphArray(data))
 
-//    function unpack(rows, key) {
-//        return rows.map(function (row) { return row[key]; });
-//    }
+function graphArray(arr) {
+    for (var i = 0; i < arr.length; i++) {
+        graphData.push(arr[i])
+    }
+}
+
+setTimeout(showGraph, 500);
+
+function showGraph() {
+
+    Highcharts.chart('container', {
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Monthly Average Temperature'
+        },
+        subtitle: {
+            text: 'Source: WorldClimate.com'
+        },
+        xAxis: {
+            categories: graphData
+        },
+        yAxis: {
+            title: {
+                text: 'Temperature'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value + '°';
+                }
+            }
+        },
+        tooltip: {
+            crosshairs: true,
+            shared: true
+        },
+        plotOptions: {
+            spline: {
+                marker: {
+                    radius: 4,
+                    lineColor: '#666666',
+                    lineWidth: 1
+                }
+            }
+        },
+        series: [{
+            name: 'Tokyo',
+            marker: {
+                symbol: 'square'
+            },
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, {
+                y: 26.5,
+                marker: {
+                    symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+                }
+            }, 23.3, 18.3, 13.9, 9.6]
+
+        }, {
+            name: 'London',
+            marker: {
+                symbol: 'diamond'
+            },
+            data: [{
+                y: 3.9,
+                marker: {
+                    symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
+                }
+            }, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        }]
+    });
+}
 
 
-//    var trace1 = {
-//        type: "scatter",
-//        mode: "lines",
-//        x: unpack(rows, 'Date'),
-//        y: unpack(rows, 'AAPL.High'),
-//        line: { color: '#17BECF' }
-//    }
-
-//    var trace2 = {
-//        type: "scatter",
-//        mode: "lines",
-//        x: unpack(rows, 'Date'),
-//        y: unpack(rows, 'AAPL.Low'),
-//        line: { color: '#7F7F7F' }
-//    }
-
-//    var data = [trace1, trace2];
-
-//    var layout = {
-//        title: 'Call length by date',
-//        xaxis: {
-//            range: ['2016-07-01', '2016-12-31'],
-//            type: 'date'
-//        },
-//        yaxis: {
-//            autorange: true,
-//            range: [86.8700008333, 138.870004167],
-//            type: 'linear'
-//        }
-//    };
-
-//    Plotly.newPlot('graph', data, layout);
-/*})*/
