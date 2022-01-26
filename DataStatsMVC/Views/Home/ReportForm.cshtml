@@ -1,0 +1,24 @@
+﻿@model DepartmentViewModel
+
+<h3>Please complete the below</h3>
+
+<form asp-action="postrangebydepartment" asp-controller="call" method="post" role="form" class="m-3 w-25">
+    <div class="form-group m-1">
+        <label asp-for="@Model.Name">Example select</label>
+        <select class="form-control" asp-for="@Model.Name">
+                <option>BOI</option>
+                <option>Fraud</option>
+                <option>LBG</option>
+                <option>ND</option>
+        </select>
+    </div>
+    <div class="form-group m-1">
+        <label asp-for="@Model.RangeStart"></label>
+        <input asp-for="@Model.RangeStart" class="form-control" placeholder="dd/mm/yyyy"/>
+    </div>
+    <div class="form-group m-1">
+        <label asp-for="@Model.RangeEnd">Range End</label>
+        <input class="form-control" asp-for="@Model.RangeEnd" placeholder="dd/mm/yyyy"/>
+    </div>
+    <button class="btn btn-primary mt-2 ml-1" type="submit">Submit</button>
+</form>

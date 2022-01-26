@@ -1,0 +1,48 @@
+﻿@model EmployeeViewModel
+
+<h2>Add New Employee</h2>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form method="post" asp-controller="Employee" asp-action="AddEmployee">
+                <h5>Please fillout all fields</h5>
+                <hr />
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group mt-2 mb-2">
+                    <label asp-for="@Model.FirstName"></label>
+                    <input asp-for="@Model.FirstName" class="form-control" />
+                    <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-2 mb-2">
+                    <label asp-for="@Model.Surname"></label>
+                    <input asp-for="@Model.Surname" class="form-control" />
+                    <span asp-validation-for="@Model.Surname" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-2 mb-2">
+                    <label asp-for="@Model.Age"></label>
+                    <input asp-for="@Model.Age" class="form-control" asp-format="da" />
+                    <span asp-validation-for="@Model.Age" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-2 mb-2">
+                    <label asp-for="@Model.DepartmentId"></label>
+                    <input asp-for="@Model.DepartmentId" class="form-control" asp-format="da" />
+                    <span asp-validation-for="@Model.DepartmentId" class="text-danger"></span>
+                </div>
+                <div class="form-group mt-2 mb-2">
+                    <label asp-for="@Model.Department"></label>
+                    <select class="form-select" id="departments" asp-for="@Model.Department">
+                        @foreach (var dep in Model.Departments)
+                        {
+                            <option>@dep.Name</option>
+                        }
+                    </select>
+                    <span asp-validation-for="@Model.Department" class="text-danger"></span>
+                </div>
+                <hr />
+                <div class="form-group mt-2 mb-2">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>

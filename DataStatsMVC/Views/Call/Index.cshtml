@@ -1,0 +1,50 @@
+﻿
+<table class="table table-hover my-3 mx-2 w-75">
+    <thead>
+        <tr>
+            <th scope="col">Report</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td scope="row">
+                <a style="text-decoration: none" asp-action="GetByDepartment" asp-controller="Call">
+                    Calls by Department
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td scope="row" style="text-decoration-skip: none">
+                @Html.ActionLink("Calls by Employee", "GetByEmployee", "Call", new { id = 1 })
+            </td>
+        </tr>
+        <tr>
+            <td scope="row">
+                <a style="text-decoration: none" href="@Url.Action("GetRangeByDepartment",
+                                                                     "Call",
+                                                                     new { id = 1})">
+                    Call Range by Department
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td scope="row">
+                <a style="text-decoration: none" href="@Url.Action("GetRangeByEmployee",
+                                                                    "Call",
+                                                                    new { id = 53})">
+                    Call Range by Employee
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<footer class="mt-1 py-3 bg-secondary fixed-bottom">
+    <div class="container">
+        <ul class="mt-2">
+            <li><b>Human Resources: </b>01268 695558</li>
+            <li><b>IT Helpdesk: </b>0207 1234569</li>
+            <li><b>Manager's Email: </b> managername@dataStats.com</li>
+        </ul>
+    </div>
+</footer>

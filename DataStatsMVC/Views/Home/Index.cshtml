@@ -3,6 +3,37 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4 mt-1">DataStats!</h1>
 </div>
+
+<div>
+    <table class="table table-hover mb-3">
+        <thead>
+            <tr>
+                <th scope="col">Please select a category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row"><a style="text-decoration: none" asp-action="GetDepartments" asp-controller="Department">Departments</a></td>
+            </tr>
+            <tr>
+                <td scope="row"><a style="text-decoration: none" asp-action="GetEmployees" asp-controller="Employee">Employees</a></td>
+            </tr>
+            <tr>
+                @* if the method u r calling requires a parameter use asp-route-parametersName="@model.Id" for example. *@
+                <td scope="row"><a style="text-decoration: none" asp-action="ReportMenu" asp-controller="Home">Reports</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<footer class="mt-1 py-3 bg-secondary fixed-bottom">
+    <div class="container">
+        <ul class="mt-2">
+            <li><b>Human Resources: </b>01268 695558</li>
+            <li><b>IT Helpdesk: </b>0207 1234569</li>
+            <li><b>Manager's Email: </b> managername@dataStats.com</li>
+        </ul>
+    </div>
+</footer>

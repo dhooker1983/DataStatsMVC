@@ -1,0 +1,24 @@
+﻿@model DataStatsMVC.Models.Department
+
+@{
+    ViewData["Title"] = "GetDepartment";
+}
+
+<h2 class="mt-6">GetDepartment</h2>
+
+<div>
+    <h4>Department</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+    </dl>
+    <h4>@Html.DisplayFor(model => model.DepartmentId)</h4>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
