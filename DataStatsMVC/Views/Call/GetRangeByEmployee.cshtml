@@ -1,14 +1,20 @@
 ﻿@model IEnumerable<Call>
 
-<button style="width:auto" class="mt-4 mb-4 mx-auto btn btn-warning">
-    Toggle View
-</button>
+<div class="container-fluid d-flex flex-row align-items-end justify-content-between">
+    <div>
+        <h5 class="mb-4">Calls by @ViewBag.Name:  @ViewBag.StartDate - @ViewBag.EndDate</h5>
+    </div>
+    <div>
+        <button style="width:auto" class="mt-4 mb-4 mx-auto btn btn-warning">
+            Toggle View
+        </button>
+    </div>
+</div>
 
 <table class="table table-hover mt-2 mx-auto">
     <thead class="bg-light">
         <tr>
-            <th scope="col">Employee Id</th>
-            <th scope="col">Deparment</th>
+            <th scope="col">#</th>
             <th scope="col">Date</th>
             <th scope="col">Talk Time</th>
             <th scope="col">Wrap Time</th>
@@ -19,15 +25,22 @@
     <tbody>
         @foreach (var call in Model)
         {
-            <tr>
-                <td scope="row">@call.EmployeeId</td>
-                <td scope="row">@call.Department.Name</td>
-                <td scope="row">@call.Offered.ToShortDateString()</td>
-                <td scope="row">@call.TalkTime</td>
-                <td scope="row">@call.WrapTime</td>
-                <td scope="row">@call.AHT</td>
-                <td scope="row">@call.InService</td>
-            </tr>
+        <tr>
+            <td scope="row">#</td>
+            <td scope="row">@call.Offered.ToShortDateString()</td>
+            <td scope="row">@call.TalkTime</td>
+            <td scope="row">@call.WrapTime</td>
+            <td scope="row">@call.AHT</td>
+            @{ if (call.InService)
+                {
+                    <td scope="row">Yes</td>
+                }
+                else
+                {
+                    <td scope="row">No</td>
+                }
+            }
+        </tr>
         }
     </tbody>
 </table>

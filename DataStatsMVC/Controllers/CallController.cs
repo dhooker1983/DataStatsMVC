@@ -70,6 +70,10 @@ namespace DataStatsMVC.Controllers
         [HttpGet]
         public IActionResult GetRangeByDepartment(DepartmentViewModel model)
         {
+            ViewBag.Name = model.Name;
+            ViewBag.StartDate = model.RangeStart.ToShortDateString();
+            ViewBag.EndDate = model.RangeEnd.ToShortDateString();   
+
             var name = model.Name.ToString();
             var start = model.RangeStart.ToString("yyyy-MM-dd h:mm tt");
             var finish = model.RangeEnd.ToString("yyyy-MM-dd h:mm tt");
@@ -79,19 +83,23 @@ namespace DataStatsMVC.Controllers
             return View(callList);
         }
 
-        public IActionResult PostRangeByEmployee(DepartmentViewModel model)
+        public IActionResult PostRangeByEmployee(EmployeeViewModel model)
         {
             return RedirectToAction("GetRangeByEmployee", model);
         }
 
         [HttpGet]
-        public IActionResult GetRangeByEmployee(DepartmentViewModel model)
+        public IActionResult GetRangeByEmployee(EmployeeViewModel model)
         {
-            var id = model.DepId;
+            ViewBag.Name = model.Name;
+            ViewBag.StartDate = model.RangeStart.ToShortDateString();
+            ViewBag.EndDate = model.RangeEnd.ToShortDateString();
+
+            var name = model.Name;
             var start = model.RangeStart.ToString("yyyy-MM-dd h:mm tt");
             var finish = model.RangeEnd.ToString("yyyy-MM-dd h:mm tt");
 
-            var callList = _callRepository.GetRangeByEmployee(id, start, finish);
+            var callList = _callRepository.GetRangeByEmployee(name, start, finish);
 
             return View(callList);
         }

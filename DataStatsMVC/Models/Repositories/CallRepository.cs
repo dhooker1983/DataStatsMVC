@@ -42,12 +42,9 @@ namespace DataStatsMVC.Models.Repositories
                             .ToList();
         }
 
-        public IEnumerable<Call> GetRangeByEmployee(int id, string start, string finish)
+        public IEnumerable<Call> GetRangeByEmployee(string name, string start, string finish)
         {
-            start = "2021-01-01";
-            finish = "2021-10-30";
-
-            var sp = string.Format("EXEC RangeByEmployee @start = '{0}', @finish = '{1}', @id = {2}", start, finish, id);
+            var sp = string.Format("EXEC RangeByEmployee @start = '{0}', @finish = '{1}', @name = '{2}'", start, finish, name);
 
             return _context.Calls
                         .FromSqlRaw<Call>(sp)

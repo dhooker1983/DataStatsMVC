@@ -69,8 +69,16 @@ namespace DataStatsMVC.Controllers
 
         public IActionResult FormEmployeeRange()
         {
-            //think i need to create a new view model for this view
-            throw new NotImplementedException();
+            var model = _depRepository.GetAll().ToList();
+            var emp = _empRepository.GetAll().ToList();
+
+            var viewModel = new EmployeeViewModel
+            {
+                Employees = emp,
+                Departments = model
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult FormEmployeeCalls()
