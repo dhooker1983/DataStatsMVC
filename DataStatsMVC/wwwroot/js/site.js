@@ -3,17 +3,17 @@
 
 // Write your JavaScript code.
 
-var graphData = [];
+//var graphData = [];
 
-fetch('/this/needs/tobe/decided')
-    .then(response => response.json())
-    .then(data => graphArray(data))
+//fetch('/this/needs/tobe/decided')
+//    .then(response => response.json())
+//    .then(data => graphArray(data))
 
-function graphArray(arr) {
-    for (var i = 0; i < arr.length; i++) {
-        graphData.push(arr[i])
-    }
-}
+//function graphArray(arr) {
+//    for (var i = 0; i < arr.length; i++) {
+//        graphData.push(arr[i])
+//    }
+//}
 
 setTimeout(showGraph, 500);
 

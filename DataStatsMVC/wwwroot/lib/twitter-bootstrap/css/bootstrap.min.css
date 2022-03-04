@@ -7999,6 +7999,10 @@ textarea.form-control-lg {
     font-weight: 400 !important
 }
 
+.fw-semiBold {
+    font-weight: 500 !important
+}
+
 .fw-bold {
     font-weight: 700 !important
 }
