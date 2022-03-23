@@ -3,9 +3,11 @@ using DataStatsMVC.Models.Interfaces;
 using DataStatsMVC.Models.Repositories;
 using DataStatsMVC.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +19,7 @@ namespace DataStatsMVC.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IDepartmentRepository _depRepository;
         private readonly IEmployeeRepository _empRepository;
+        private readonly string _connection = "Server=(localdb)\\mssqllocaldb;Database=DataStatsMVC;Trusted_Connection=True;MultipleActiveResultSets=true";
 
         public HomeController(ILogger<HomeController> logger, IDepartmentRepository depRepository, 
             IEmployeeRepository empRepository)
@@ -52,6 +55,49 @@ namespace DataStatsMVC.Controllers
         public IActionResult ReportMenu()
         {
             return View();
+        }
+
+        public IActionResult Graph(int id)
+        {
+            ViewBag.Id = id;
+
+            return View();
+        }
+
+        public JsonResult GetJson()
+        {
+            //var dataSet = new DataSet();
+            //var list = new List<object>();
+            var graph = new GraphObj();
+
+            //using(SqlConnection connect = new SqlConnection(_connection))
+            //using (SqlCommand command = new SqlCommand("ArrayTest", connect)
+            //{
+            //    CommandType = CommandType.StoredProcedure
+            //})
+            //{
+            //    connect.Open();
+            //    SqlDataAdapter adapter = new SqlDataAdapter(command);
+            //    adapter.Fill(dataSet);
+            //}
+
+            //for (int i = 0; i < dataSet.Tables[0].Rows.Count; i++)
+            //{
+            //    graph.GraphData.Add((double)dataSet.Tables[0].Rows[i]["Average"]);
+
+            //};
+
+            var myList = new List<double>()
+            {
+                3,
+                2,
+                2,
+                4
+            };
+
+            graph.GraphData = myList;
+
+            return Json(graph);
         }
 
         public IActionResult FormDepartmentRange()
@@ -90,7 +136,6 @@ namespace DataStatsMVC.Controllers
             return View(model);
         }
 
-        //
         public IActionResult FormDepartmentCalls()
         {
             var model = new DepartmentViewModel();

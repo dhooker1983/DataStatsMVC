@@ -205,7 +205,7 @@ sup {
 
 a {
     color: #2fa4e7;
-    text-decoration: underline
+    text-decoration: none;
 }
 
     a:hover {
@@ -7879,6 +7879,10 @@ textarea.form-control-lg {
     padding-top: 3rem !important
 }
 
+.pt-6 {
+    padding-top: 6rem !important
+}
+
 .pe-0 {
     padding-right: 0 !important
 }
@@ -11902,3 +11906,4 @@ textarea.form-control-lg {
 .badge.bg-light, .badge.bg-secondary {
     color: #343a40
 }
+

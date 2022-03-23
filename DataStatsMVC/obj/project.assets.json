@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "Highsoft.Highcharts/9.3.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Highcharts.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Highcharts.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.15": {
         "type": "package",
         "compile": {
@@ -2714,6 +2726,19 @@
     }
   },
   "libraries": {
+    "Highsoft.Highcharts/9.3.2.1": {
+      "sha512": "TRIfXRSr7sOpo0BK0gqAgJGzmQngeon3J4np777e4qe7xXfGKp0Xp/uKPAwk2BFmDScEe4GWe/aYuFl90wxE4w==",
+      "type": "package",
+      "path": "highsoft.highcharts/9.3.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "highsoft.highcharts.9.3.2.1.nupkg.sha512",
+        "highsoft.highcharts.nuspec",
+        "lib/netstandard2.0/Highcharts.dll",
+        "license.txt"
+      ]
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.15": {
       "sha512": "NsaZoYsLfPZwjy8RJ3dnWp/fFXWKyGh+RWIRPENNdXGLifFOsdTrRlGyXz2TqGk9LsgZTZvBwgLzY/F8XO+inA==",
       "type": "package",
@@ -8833,6 +8858,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Highsoft.Highcharts >= 9.3.2.1",
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore >= 3.1.15",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 3.1.15",
       "Microsoft.AspNetCore.Identity.UI >= 3.1.15",
@@ -8880,6 +8906,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "Highsoft.Highcharts": {
+            "target": "Package",
+            "version": "[9.3.2.1, )"
+          },
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
             "target": "Package",
             "version": "[3.1.15, )"

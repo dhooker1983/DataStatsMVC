@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Call>
 
-<button style="width:auto" class="mt-4 mb-4 mx-auto btn btn-warning">
+<button style="width:auto; text-decoration: none;" class="mt-4 mb-4 mx-auto btn btn-warning" onclick="toggleView()">
     Toggle View
 </button>
 
-<table class="table table-hover mt-2 mx-auto">
+<table class="table table-hover mx-auto" id="callTable">
     <thead class="bg-light">
         <tr>
             <th scope="col">Employee Id</th>
@@ -31,4 +31,20 @@
         }
     </tbody>
 </table>
+
+<script src="https://code.highcharts.com/highcharts.js">
+
+</script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
+<figure class="highcharts-figure hide" id="callGraph">
+    <div id="container"></div>
+    <p class="highcharts-description">
+        This chart shows total calls handled each month for the selected date range and the associated
+        AHT for those calls.
+    </p>
+</figure>
 

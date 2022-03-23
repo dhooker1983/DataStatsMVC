@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+tS1qCvGKrtpYcJqMHdKEllkV3Uk0XCg3MwucaR601V74zTDqXQUyPX+KIkK2YMhn4feDPPf2DmxnsaEB7uHpQ==",
+  "dgSpecHash": "+D0ZH/t6buc7nClroopPQpCZ7a0HwHj0vTG0G1Fl13lTZa2C7s325BXYLsNJoUBvbXK2ac5ngbVaBpu43Av9eg==",
   "success": true,
   "projectFilePath": "C:\\Users\\dghoo\\source\\repos\\DataStats\\DataStatsMVC\\DataStatsMVC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\dghoo\\.nuget\\packages\\highsoft.highcharts\\9.3.2.1\\highsoft.highcharts.9.3.2.1.nupkg.sha512",
     "C:\\Users\\dghoo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\3.1.15\\microsoft.aspnetcore.cryptography.internal.3.1.15.nupkg.sha512",
     "C:\\Users\\dghoo\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\3.1.15\\microsoft.aspnetcore.cryptography.keyderivation.3.1.15.nupkg.sha512",
     "C:\\Users\\dghoo\\.nuget\\packages\\microsoft.aspnetcore.diagnostics.entityframeworkcore\\3.1.15\\microsoft.aspnetcore.diagnostics.entityframeworkcore.3.1.15.nupkg.sha512",

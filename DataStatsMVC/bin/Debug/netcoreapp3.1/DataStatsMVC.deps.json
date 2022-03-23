@@ -31,6 +31,7 @@
     ".NETCoreApp,Version=v3.1": {
       "DataStatsMVC/1.0.0": {
         "dependencies": {
+          "Highsoft.Highcharts": "9.3.2.1",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "3.1.15",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.15",
           "Microsoft.AspNetCore.Identity.UI": "3.1.15",
@@ -306,6 +307,20 @@
         },
         "compile": {
           "DataStatsMVC.dll": {}
+        }
+      },
+      "Highsoft.Highcharts/9.3.2.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Highcharts.dll": {
+            "assemblyVersion": "9.3.2.1",
+            "fileVersion": "9.3.2.1"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Highcharts.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.15": {
@@ -3926,6 +3941,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Highsoft.Highcharts/9.3.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TRIfXRSr7sOpo0BK0gqAgJGzmQngeon3J4np777e4qe7xXfGKp0Xp/uKPAwk2BFmDScEe4GWe/aYuFl90wxE4w==",
+      "path": "highsoft.highcharts/9.3.2.1",
+      "hashPath": "highsoft.highcharts.9.3.2.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.15": {
       "type": "package",
