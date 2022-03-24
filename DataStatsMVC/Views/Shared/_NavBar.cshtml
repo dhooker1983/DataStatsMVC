@@ -12,13 +12,17 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" asp-action="index" asp-controller="home">
+                    <a class="nav-link" asp-action="Index" asp-controller="Home">
                         Home
                         <span class="visually-hidden">(current)</span>
                     </a>
                 </li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Reports</a>
+                    <a class="nav-link" asp-action="GetEmployees" asp-controller="Employee">Employees</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="ReportMenu" asp-controller="Home">Reports</a>
                 </li>
                 @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
                 {
@@ -28,14 +32,14 @@
                 }
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Departments</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">BOI</a>
-                        <a class="dropdown-item" href="#">F&D</a>
-                        <a class="dropdown-item" href="#">LBG</a>
-                        <a class="dropdown-item" href="#">ND</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">All Departments</a>
-                    </div>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">BOI</a>
+                            <a class="dropdown-item" href="#">F&D</a>
+                            <a class="dropdown-item" href="#">LBG</a>
+                            <a class="dropdown-item" href="#">ND</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" asp-action="GetDepartments" asp-controller="Department">All Departments</a>
+                        </div>
                 </li>
             </ul>
             <ul class="navbar-nav me-lg-auto">

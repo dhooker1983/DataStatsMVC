@@ -2,6 +2,7 @@
 using DataStatsMVC.Models.Interfaces;
 using DataStatsMVC.Models.Repositories;
 using DataStatsMVC.Models.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Logging;
@@ -29,6 +30,8 @@ namespace DataStatsMVC.Controllers
             _empRepository = empRepository;
         }
 
+        //[Authorize(policy: "Admin")]
+        
         public IActionResult Index()
         {
             return View();
@@ -54,13 +57,6 @@ namespace DataStatsMVC.Controllers
 
         public IActionResult ReportMenu()
         {
-            return View();
-        }
-
-        public IActionResult Graph(int id)
-        {
-            ViewBag.Id = id;
-
             return View();
         }
 

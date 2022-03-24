@@ -192,4 +192,3 @@ C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\DataS
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\FormDepartmentRange.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\FormEmployeeRange.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\bin\Debug\netcoreapp3.1\Highcharts.dll
-C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\Graph.cshtml.g.cs
