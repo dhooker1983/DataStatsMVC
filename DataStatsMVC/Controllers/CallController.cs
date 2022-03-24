@@ -1,4 +1,4 @@
-﻿using DataStatsMVC.Models;
+﻿    using DataStatsMVC.Models;
 using DataStatsMVC.Models.Interfaces;
 using DataStatsMVC.Models.Repositories;
 using DataStatsMVC.Models.ViewModels;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DataStatsMVC.Controllers
 {
-    //[Authorize(Roles = "Admin,User")]
+    //[Authorize(Roles="Admin,User")]
     public class CallController : Controller
     {
         private readonly ICallRepository _callRepository;

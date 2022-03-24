@@ -62,6 +62,8 @@ namespace DataStatsMVC.Areas.Identity.Pages.Account
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
             public string Gender { get; set; }
+            public DateTime CareerStart { get; set; } = DateTime.Now;
+            public bool CurrentlyEmployed { get; set; } = true;
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -76,13 +78,16 @@ namespace DataStatsMVC.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email/*, Gender = Input.Gender*/ };
+                var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email, Gender = Input.Gender, 
+                                                CareerStart = Input.CareerStart, CurrentlyEmployed = Input.CurrentlyEmployed };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
-                    //var employed = new Claim("Gender", user.Gender);
+                    //I've added the claims when creating the user object above but you can also add claims after the user
+                    //objects have been created with the below code:
 
-                    //await _userManager.AddClaimAsync(user, employed);
+                    //var gender = new Claim("Gender", user.Gender);
+                    //await _userManager.AddClaimAsync(user, gender);
 
                     _logger.LogInformation("User created a new account with password.");
 

@@ -58,6 +58,7 @@ namespace DataStatsMVC
 
             //same as the above but as the above add of defaultidentity is required that is the perferred
             //option for configuring user policy settings.
+            
             services.Configure<IdentityOptions>(ops =>
             {
                 ops.Lockout.DefaultLockoutTimeSpan = new TimeSpan(00, 01, 00);
@@ -70,6 +71,8 @@ namespace DataStatsMVC
             services.AddScoped<ICallRepository, CallRepository>();
             services.AddScoped<IDepartmentRepository, DepartmentRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+
+            services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, ApplicationUserClaimsPrincipalFactory>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -192,3 +192,13 @@ C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\DataS
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\FormDepartmentRange.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Views\Home\FormEmployeeRange.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\bin\Debug\netcoreapp3.1\Highcharts.dll
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ChangePassword.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Email.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\ExternalLogins.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\PersonalData.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\SetPassword.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\TwoFactorAuthentication.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ManageNav.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs

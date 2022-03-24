@@ -30,7 +30,7 @@ namespace DataStatsMVC.Controllers
             _empRepository = empRepository;
         }
 
-        //[Authorize(policy: "Admin")]
+        //[Authorize(Roles="Admin")]
         
         public IActionResult Index()
         {
