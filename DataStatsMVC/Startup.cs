@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,7 +38,7 @@ namespace DataStatsMVC
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
 
-            
+
             //Using ApplicationUser for the User and the default class provided for the Role (IdentityRole).
             services.AddIdentity<ApplicationUser, IdentityRole>(options =>
                        {
@@ -46,7 +47,8 @@ namespace DataStatsMVC
                            options.Lockout.DefaultLockoutTimeSpan = new TimeSpan(00, 01, 00);
                        })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultUI();
+                .AddDefaultUI()
+                .AddDefaultTokenProviders();
 
             //Below is the default Identity setup, above is the preferred option if you want to use roles.
             //services.AddDefaultIdentity<IdentityUser>(options =>
@@ -62,8 +64,24 @@ namespace DataStatsMVC
             services.Configure<IdentityOptions>(ops =>
             {
                 ops.Lockout.DefaultLockoutTimeSpan = new TimeSpan(00, 01, 00);
-                ops.User.RequireUniqueEmail = true;
+                ops.User.RequireUniqueEmail = false;
             });
+
+            services.AddAuthentication()
+                .AddGoogle(ops =>
+                {
+                    //TODO - register app with google services.
+                    ops.ClientId = " ";
+                    ops.ClientSecret = " ";
+                });
+
+            services.AddAuthentication()
+                .AddTwitter(ops =>
+                {
+                    //TODO - register app with twitter services.
+                    ops.ConsumerKey = " ";
+                    ops.ConsumerSecret = " ";
+                });
 
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -73,6 +91,7 @@ namespace DataStatsMVC
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
             services.AddScoped<IUserClaimsPrincipalFactory<ApplicationUser>, ApplicationUserClaimsPrincipalFactory>();
+            services.AddTransient<IEmailSender, EmailSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

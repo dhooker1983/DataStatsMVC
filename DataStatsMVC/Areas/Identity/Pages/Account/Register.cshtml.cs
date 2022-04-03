@@ -21,17 +21,20 @@ namespace DataStatsMVC.Areas.Identity.Pages.Account
     public class RegisterModel : PageModel
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
+            RoleManager<IdentityRole> roleManager,
             SignInManager<ApplicationUser> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
             _userManager = userManager;
+            _roleManager = roleManager;
             _signInManager = signInManager;
             _logger = logger;
             _emailSender = emailSender;
@@ -89,8 +92,12 @@ namespace DataStatsMVC.Areas.Identity.Pages.Account
                     //var gender = new Claim("Gender", user.Gender);
                     //await _userManager.AddClaimAsync(user, gender);
 
+
                     _logger.LogInformation("User created a new account with password.");
 
+                    //below code can be used to add a role to a user. "user" role is assigned by default currently
+                    //_roleManager can be used to check that a role exists before if is assigned.
+                    await _userManager.AddToRoleAsync(user, "user");
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(

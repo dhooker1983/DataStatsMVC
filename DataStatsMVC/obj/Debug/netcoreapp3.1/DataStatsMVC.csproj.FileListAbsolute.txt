@@ -202,3 +202,9 @@ C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_ViewImports.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\Index.cshtml.g.cs
 C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\_Layout.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\bin\Debug\netcoreapp3.1\SendGrid.dll
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\bin\Debug\netcoreapp3.1\StarkbankEcdsa.dll
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\EnableAuthenticator.cshtml.g.cs
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Twitter.dll
+C:\Users\dghoo\source\repos\DataStats\DataStatsMVC\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\Account\Manage\DeletePersonalData.cshtml.g.cs

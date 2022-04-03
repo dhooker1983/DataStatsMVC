@@ -8,10 +8,10 @@ namespace DataStatsMVC.Areas.Identity
     //This class is a custom extension of the UserClaimsPrincipalFactory (it also derives from it) as it is reponsible
     //for added new claims to the default IdentityUser models, however as we have extended the default IdentityUser model
     //(ApplicationUser), we also have to extended the ClaimsPrincipalFactory to add new claims to our custom user model.
-    public class ApplicationUserClaimsPrincipalFactory : UserClaimsPrincipalFactory<ApplicationUser>
+    public class ApplicationUserClaimsPrincipalFactory : UserClaimsPrincipalFactory<ApplicationUser, IdentityRole>
     {
         public ApplicationUserClaimsPrincipalFactory(UserManager<ApplicationUser> userManager, 
-            IOptions<IdentityOptions> options) : base(userManager, options)
+            IOptions<IdentityOptions> options, RoleManager<IdentityRole> roleManager) : base(userManager, roleManager, options)
         {
         }
 
