@@ -10,7 +10,8 @@ namespace DataStatsMVC.Areas.Identity
 {
     public class EmailSender : IEmailSender
     {
-        private readonly string _apiKey = "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";
+        //TODO Inject config options for the SendGrid API Key
+        private readonly string _apiKey = "";
         private readonly string _fromName ="DataStats";
         private readonly string _fromEmail = "dhooker@sky.com";
 
